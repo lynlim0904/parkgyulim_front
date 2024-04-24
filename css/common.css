@@ -1,0 +1,439 @@
+@charset "utf-8";
+/* 초기화 */
+html, body, div, header, nav, section, aside, article, footer, figure, figcaption, fieldset, legend, ul, ol, li, dl, dt, dd, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+.hidden {
+    position: absolute;
+    left: -9999px;
+}
+
+/* 웹 폰트 다운로드 */
+@font-face {
+    font-family: "BlackHanSans";
+    src: url('../fonts/Black_Han_Sans/BlackHanSans-Regular.ttf')format("truetype");
+}
+
+@font-face {
+    font-family: "Dohyeon";
+    src: url('../fonts/DoHyeon/DoHyeon-Regular.ttf')format('truetype');
+}
+
+/* 링크 스타일 */
+a:link {
+    color: #4f4f4f;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover, a:focus {
+    color: #FF9436;
+    text-decoration: none;
+}
+
+/* 기본 스타일 */
+body {
+    color: #000;
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 1.2;
+    font-family: "Dohyeon";
+}
+
+/* 건너뛰기 링크 */
+#skipNav {
+    position: absolute;
+    left: -9999px;
+}
+
+#skipNav:focus {
+    left: 0;
+    margin: 3px 0 0 3px;
+    padding: 5px 15px;
+    background-color: #000;
+    color: #fff;
+}
+
+/* 전체 레이아웃 */
+#header, #videoContainer, #visual, #reservation, #footerInner {
+    width: 80%;
+    margin: 0 auto; 
+    box-sizing: border-box;
+    
+}
+
+/* header 영역 시작 */
+#header {
+    position: relative;
+    height: 150px;
+    background-color: #fff;
+    padding: 0;
+}
+
+#header .logo {
+    position: absolute;
+    top: 38%;
+    left: 2%;
+}
+
+    /* 사이드바 메뉴 영역 */
+input[id="menuicon"] {
+    display: none;
+    position: absolute;
+}
+
+input[id="menuicon"] + label {
+    display: block;
+    width: 60px;
+    height: 45px;
+    position: fixed;
+    right: 0;
+    top: calc(50% - 22.5px);
+    transition: all 0.35s;
+    cursor: pointer;
+}
+input[id="menuicon"]:checked + label {
+    z-index: 2;
+    right: 20%;
+}
+
+input[id="menuicon"] + label span {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    border-radius: 30px;
+    background: #4f4f4f;
+    transition: all 0.35s;
+}
+
+
+input[id="menuicon"] + label span:nth-child(1){
+    top: 0;
+}
+input[id="menuicon"] + label span:nth-child(2){
+    top: 50%;
+    transform: translateY(-50%);
+}
+input[id="menuicon"] + label span:nth-child(3){
+    bottom: 0;
+}
+input[id="menuicon"]:checked + label span:nth-child(1){
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    background-color: #FF9436;
+}
+input[id="menuicon"]:checked + label span:nth-child(2){
+    opacity: 0;
+}
+input[id="menuicon"]:checked + label span:nth-child(3){
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+    background-color: #FF9436;
+}
+
+div[class="sidebar"] {
+    width: 20%;
+    height: 100%;
+    background: #222;
+    position: fixed;
+    top: 0;
+    right: -20%;
+    z-index: 2;
+    transition: all 0.35s;
+}
+input[id="menuicon"]:checked + label + div {
+    right: 0;
+}
+
+/* 사이드바 내용 시작 */
+.sidebar>ul>li {
+    color: #fff;
+    text-indent: 20px;
+    margin-top: 20px;
+    font-size: 1.5em;
+    line-height: 1.3;
+}
+.sidebar>ul>li a {
+    color: #666;
+    font-size: 1.55em;
+}
+.sidebar>ul>li a:hover {
+    color: #FF9436;
+}
+
+/* 사이드바 내용 종료 */
+
+#header .mainMenu li, #header .mainMenu a {
+    display: inline-block;
+}
+
+
+#header .mainMenu {
+    position: relative;
+    top: 50px;
+    height: 100px;
+    padding-left: 30%;
+}
+
+#header .mainMenu li {
+    position: relative;
+    top: 10px;
+    left: 40px;
+    font-size: 1.2em;
+}
+
+#header .mainMenu>li a {
+    font-size: 1.8em;
+    padding: 15px 25px 15px 25px;
+    margin: 3px 12px;
+    color: rgb(57, 50, 50);
+    letter-spacing: 0.5px;
+    border-top: 2px solid #FF9436;
+}
+
+#header .mainMenu>li a:hover {
+    color: #FF9436;
+    border-top: none;
+    border-bottom: 2px solid #FF9436;
+    transition: all 0.5s;
+    transition-timing-function: ease;
+    transform: translateY(2px);
+}
+
+#header .mainMenu>li:first-child>a {
+    border-left: 0px;
+}
+
+/* 비주얼 영역 시작 */
+#videoContainer {
+    margin-bottom: 20px;
+}
+
+/* 비주얼 영역 종료 */
+
+/* 슬라이드 영역 시작 */
+.slide-container {
+    position: relative;
+}
+
+.slide-container input[id*="slide"] {
+    display: none;
+}
+
+.slide-container .slidewrap {
+    max-width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slide-container .slidelist {
+    white-space: nowrap;
+    font-size: 0;
+}
+
+.slide-container .slidelist>li {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+    transition: all 0.5s;
+}
+
+.slide-container .slidelist>li>a {
+    display: block;
+    position: relative;
+}
+
+.slide-container .slidelist>li>a img {
+    width: 100%;
+}
+
+.slide-container .slidelist label {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    cursor: pointer;
+}
+
+.slide-container .slidelist .left {
+    left: 10%;
+    background: url('../sampleImages/arrow_left.png') center center / 100% no-repeat;
+    color: #fff;
+}
+.slide-container .slidelist .right {
+    right: 10%;
+    background: url('../sampleImages/arrow_right.png') center center / 100% no-repeat;
+    z-index: 1;
+}
+
+.slide-container [id="slide01"]:checked ~ .slidewrap .slidelist>li {
+    transform: translateX(0%);
+}
+.slide-container [id="slide02"]:checked ~ .slidewrap .slidelist>li {
+    transform: translateX(-100%);
+}
+.slide-container [id="slide03"]:checked ~ .slidewrap .slidelist>li {
+    transform: translateX(-200%);
+}
+.slide-container [id="slide04"]:checked ~ .slidewrap .slidelist>li {
+    transform: translateX(-300%);
+}
+.slide-container [id="slide05"]:checked ~ .slidewrap .slidelist>li {
+    transform: translateX(-400%);
+}
+
+.slide-container .slide-control [class*="control"] {
+    display: none;
+}
+
+.slide-container [id="slide01"]:checked ~.slidewrap .control01 {
+    display: block;
+}
+.slide-container [id="slide02"]:checked ~.slidewrap .control02 {
+    display: block;
+}
+.slide-container [id="slide03"]:checked ~.slidewrap .control03 {
+    display: block;
+}
+.slide-container [id="slide04"]:checked ~.slidewrap .control04 {
+    display: block;
+}
+.slide-container [id="slide05"]:checked ~.slidewrap .control05 {
+    display: block;
+}
+/* 슬라이드 영역 종료 */
+
+/* CGV,롯데시네마,메가박스 영역 시작 */
+#reservation {
+    max-width: 80%;
+    width: 100%;
+    margin: 50px auto;
+}
+
+#reservation>ul {
+    font-size: 0;
+}
+
+#reservation>ul>li {
+    display: inline-block;
+    vertical-align: top;
+    width: 33.3%;
+}
+
+#reservation>ul>li>a {
+    display: block;
+    width: auto;
+    text-decoration: none;
+    margin: 5px;
+}
+
+#reservation>ul>li>a .screen {
+    position: relative;
+    overflow: hidden;
+}
+
+#reservation>ul>li>a .screen .top {
+    position: absolute;
+    bottom: 150%;
+    left: 30px;
+    z-index: 2;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 900;
+    transition: all 0.45s;
+}
+
+#reservation>ul>li>a .screen .bottom {
+    position: absolute;
+    top: 150%;
+    left: 30px;
+    z-index: 2;
+    color: #fff;
+    font-size: 18px;
+    transition: all 0.45s;
+}
+
+#reservation>ul>li>a .screen img {
+    width: 100%;
+}
+
+#reservation>ul>li>a h3 {
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+    color: #666;
+}
+
+#reservation>ul>li>a:hover .top {
+    bottom: 52%;
+}
+#reservation>ul>li>a:hover .bottom {
+    top: 52%;
+}
+
+#reservation>ul>li>a .screen::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.35s;
+}
+#reservation>ul>li>a:hover .screen::after {
+    opacity: 1;
+}
+
+/* CGV,롯데시네마,메가박스 영역 종료 */
+
+/* footer 영역 시작 */
+#footer {
+    padding: 15px 0;
+    background-color: #c7c7c7;
+    margin-top: 20px;
+}
+
+#footerInner {
+    position: relative;
+}
+
+.footerLogo {
+    position: absolute;
+    left: 65%;
+    top: 8%;
+}
+
+address, .copyright {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.guide a::before {
+    content: "|";
+    padding-right: 20px;
+}
+
+address {
+    font-style: normal;
+    margin-bottom: 5px;
+}
+
+address>span {
+    display: block;
+}
+/* footer 영역 종료 */

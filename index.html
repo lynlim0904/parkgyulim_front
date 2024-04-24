@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Project</title>
+    <link rel="stylesheet" href="css/common.css">
+
+</head>
+<body>
+    <!-- 건너뛰기 링크 영역 시작 -->
+    <a id="skipNav" href="#contentsArea">본문바로가기</a>
+    <!-- 건너뛰기 링크 영역 종료 -->
+
+    <!-- wrapper 영역 시작 -->
+    <div id="wrapper">
+        <!-- header 영역 시작-->
+        <header id="header">
+            <!-- 로고 -->
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="./sampleImages//범죄도시 로고.png" alt="Logo" width="30%">
+                </a>
+            </h1>        
+            <!-- 사이드바, 버튼 -->    
+            <div id="sidebar-button">
+                <input type="checkbox" id="menuicon">
+                <label for="menuicon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="sidebar">
+                    <ul>
+                        <li>예매하기
+                            <ul>
+                                <li><a href="http://www.cgv.co.kr/ticket/?MOVIE_CD=20035938&MOVIE_CD_GROUP=20035938">CGV</a></li>
+                                <li><a href="https://www.lottecinema.co.kr/NLCHS/Ticketing?movieCd=20930&movieName=%EB%B2%94%EC%A3%84%EB%8F%84%EC%8B%9C4">롯데시네마</a></li>
+                                <li><a href="https://www.megabox.co.kr/booking">메가박스</a></li>
+                            </ul>
+                        </li>
+                        <li>범죄도시 다른 편 보러가기
+                            <ul>
+                                <li><a href="#">범죄도시1</a></li>
+                                <li><a href="#">범죄도시2</a></li>
+                                <li><a href="#">범죄도시3</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 메인 메뉴 --> <!-- 앵커 걸기부터 시작-->
+            <nav>
+                <h2 class="hidden">메인 메뉴</h2>
+                <ul class="mainMenu">
+                    <li>
+                        <a href="#" class="masukdo">
+                            마석도
+                        </a>
+                    </li>
+                    <li><a href="#" class="baekchanggi">백창기</a></li>
+                    <li><a href="#" class="jangesu">장이수</a></li>
+                    <li><a href="#" class="jangdongchul">장동철</a></li>
+                    <li><a href="#reservation" class="etc" id="etc">예&nbsp;&nbsp;매</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- header 영역 종료-->
+
+        <!-- 비주얼 영역 시작 -->
+        <div id="videoContainer">
+            <video class="videoTeaser" poster="sampleImages/poster1.jpg" width="100%" controls autoplay loop muted>
+                <source src="video/teaser1.mp4" type="video/mp4">
+                범죄도시4 티저 예고편
+            </video>
+        </div>
+        <!-- 비주얼 영역 종료 -->
+        
+        <!-- 컨텐츠 영역 시작 -->
+        
+            <!-- 스틸컷 slide 시작 -->
+            <div class="slide-container">
+                <input type="radio" name="slide" id="slide01" checked>
+                <input type="radio" name="slide" id="slide02">
+                <input type="radio" name="slide" id="slide03">
+                <input type="radio" name="slide" id="slide04">
+                <input type="radio" name="slide" id="slide05">
+
+                <div class="slidewrap">
+                    <ul class="slidelist">
+                        <li>
+                            <a href="">
+                                <img src="sampleImages/stillcut1.jpg" alt="stillcut1">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="sampleImages/stillcut2.jpg" alt="stillcut2">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="sampleImages/stillcut3.jpg" alt="stillcut3">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="sampleImages/stillcut4.jpg" alt="stillcut4">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="sampleImages/stillcut5.jpg" alt="stillcut5">
+                            </a>
+                        </li>
+                        
+                        <div class="slide-control">
+                            <div class="control01">
+                                <label for="slide05" class="left"></label>
+                                <label for="slide02" class="right"></label>                                
+                            </div>
+                            <div class="control02">
+                                <label for="slide01" class="left"></label>
+                                <label for="slide03" class="right"></label>
+                            </div>
+                            <div class="control03">
+                                <label for="slide02" class="left"></label>
+                                <label for="slide04" class="right"></label>
+                            </div>
+                            <div class="control04">
+                                <label for="slide03" class="left"></label>
+                                <label for="slide05" class="right"></label>                                
+                            </div>
+                            <div class="control05">
+                                <label for="slide04" class="left"></label>
+                                <label for="slide01" class="right"></label>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <!-- 스틸컷 slide 종료 -->
+            <!-- 예매 바로가기 영역 시작 -->
+            <div id="reservation">
+                <ul>
+                    <li>
+                        <a href="http://www.cgv.co.kr/ticket/?MOVIE_CD=20035938&MOVIE_CD_GROUP=20035938">
+                            <div class="screen">
+                                <div class="top">CGV</div>
+                                <div class="bottom">바로 예매하기</div>
+                                <img src="sampleImages/masukdo8.jpg" alt="cgv예매하기">
+                            </div>
+                            <div>
+                                <h3>CGV 바로 예매하기</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.lottecinema.co.kr/NLCHS/Ticketing?movieCd=20930&movieName=%EB%B2%94%EC%A3%84%EB%8F%84%EC%8B%9C4">
+                            <div class="screen">
+                                <div class="top">LOTTE CINEMA</div>
+                                <div class="bottom">바로 예매하기</div>
+                                <img src="sampleImages/baekchanggi7.jpg" alt="롯데시네마예매하기">
+                            </div>
+                            <div>
+                                <h3>롯데시네마 바로 예매하기</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.megabox.co.kr/booking">
+                            <div class="screen">
+                                <div class="top">MEGABOX</div>
+                                <div class="bottom">바로 예매하기</div>
+                                <img src="sampleImages/jangesu6.jpg" alt="메가박스예매하기">
+                            </div>
+                            <div>
+                                <h3>메가박스 바로 예매하기</h3>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 예매 바로가기 영역 종료 -->
+        
+        <!-- 컨텐츠 영역 종료 -->
+        
+        <!-- 푸터 영역 시작 -->
+        <footer id="footer">
+            <div id="footerInner">
+                <a href="#" class="footerLogo">
+                    <img src="sampleImages/메가박스.png" alt="webcafe" width="350px">
+                </a>
+                <address>
+                    <span>· 배급사 : ABO엔터테인먼트 / 플러스엠 - 서울시 성동구 왕십리로 50, 6층 (성수동1가)</span>
+                    <span>· 제작사 : (주)홍필름, 빅펀치엔터테인먼트, 비에이엔터테인먼트</span>
+                    <span>· 전화 : <a href="tel:1544-0070">ARS 1544-0070</a></span>
+                    <span>· E-MAIL : <a href="mailto:m.dreamcenter@partner.megabox.co.kr">m.dreamcenter@partner.megabox.co.kr</a></span>
+                </address>
+                <p class="copyright">COPYRIGHT &copy; MegaboxJoongAng, Inc. All rights reserved</p>
+            </div>
+        </footer>
+        <!-- 푸터 영역 종료 -->
+    </div>
+    <!-- wrapper 영역 종료 -->
+
+</body>
+</html>
